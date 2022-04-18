@@ -1,0 +1,295 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "men",
+      "img": "https://n.nordstrommedia.com/id/sr3/264878d1-083a-4b52-b13f-5cf490d8f501.jpeg?crop=pad&pad_color=FFF&format=jpeg&w=780&h=1196"
+    },
+    {
+      "id": 2,
+      "title": "women",
+      "img": "https://n.nordstrommedia.com/id/sr3/caca27b4-e81a-4a59-81ca-81f2efe94c09.jpeg?crop=pad&pad_color=FFF&format=jpeg&w=780&h=1196"
+    },
+    {
+      "id": 3,
+      "title": "kids",
+      "img": "https://s3.ap-south-1.amazonaws.com/tcsonline-live/catalog/category/land-boys_2.jpg"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "img": "https://n.nordstrommedia.com/id/sr3/d74ef791-c49b-4364-882b-24945703da60.jpeg?h=365&w=240&dpr=2",
+      "brand": "Fear of God Essentials",
+      "title": "Cotton Jersey Short Sleeve T-Shirt",
+      "price": "3,285.14",
+      "rating": 3,
+      "categoryid": "men",
+      "product_type": "clothing",
+      "gender": "male"
+    },
+    {
+      "id": 2,
+      "img": "https://n.nordstrommedia.com/id/sr3/984bbc27-aa48-4663-93fc-450c81d58ee7.jpeg?h=365&w=240&dpr=2",
+      "brand": "Fear of God Essentials",
+      "title": "Long Sleeve Cotton Jersey T-Shirt",
+      "price": "4,106.43",
+      "rating": 4,
+      "categoryid": "men",
+      "product_type": "clothing",
+      "gender": "male"
+    },
+    {
+      "id": 3,
+      "img": "https://n.nordstrommedia.com/id/sr3/8169be50-81dd-4f49-80ca-9bd778a8fc59.jpeg?h=365&w=240&dpr=2",
+      "brand": "7 Diamonds",
+      "title": "Grant Slim Fit Solid Stretch Short Sleeve Button-Up Shirt",
+      "price": "6,488.16",
+      "rating": 5,
+      "categoryid": "men",
+      "product_type": "clothing",
+      "gender": "male"
+    },
+    {
+      "id": 4,
+      "img": "https://n.nordstrommedia.com/id/sr3/f8cc0af6-e933-4ad4-82f8-6dc29695d889.jpeg?h=365&w=240&dpr=2",
+      "brand": "7 Diamonds",
+      "title": "Eclipse Print Polo",
+      "price": "6,488.16",
+      "rating": 4,
+      "categoryid": "men",
+      "product_type": "clothing",
+      "gender": "male"
+    },
+    {
+      "id": 5,
+      "img": "https://n.nordstrommedia.com/id/sr3/7bfdefa6-56e3-4a9d-b2ba-ba5d8754f21f.jpeg?h=365&w=240&dpr=2",
+      "brand": "adidas",
+      "title": "Quarter-Zip Training Top",
+      "price": "3,026.44",
+      "rating": 3,
+      "categoryid": "men",
+      "product_type": "clothing",
+      "gender": "male"
+    },
+    {
+      "id": 6,
+      "img": "https://n.nordstrommedia.com/id/sr3/12f3bd61-8002-46aa-b5d6-0e5063b6dd0e.jpeg?h=365&w=240&dpr=2",
+      "brand": "adidas",
+      "title": "Ozweego Sneaker (Men)",
+      "price": "9,034.15",
+      "rating": 5,
+      "categoryid": "men",
+      "product_type": "shoes",
+      "gender": "male"
+    },
+    {
+      "id": 7,
+      "img": "https://n.nordstrommedia.com/id/sr3/4d8bb6f0-5ab7-4d1f-bba1-776db7891d7e.jpeg?h=365&w=240&dpr=2",
+      "brand": "adidas",
+      "title": "Terrex Trailmaker Hiking Sneaker (Men)",
+      "price": "9,034.15",
+      "rating": 3,
+      "categoryid": "men",
+      "product_type": "shoes",
+      "gender": "male"
+    },
+    {
+      "id": 8,
+      "img": "https://n.nordstrommedia.com/id/sr3/565d8189-a5a3-4dfa-9775-b57e31cf80c0.jpeg?h=365&w=240&dpr=2",
+      "brand": "Alden",
+      "title": "Indy Commando Water Resistant Boot (Men)",
+      "price": "53,301.46",
+      "rating": 1,
+      "categoryid": "men",
+      "product_type": "shoes",
+      "gender": "male"
+    },
+    {
+      "id": 9,
+      "img": "https://n.nordstrommedia.com/id/sr3/df09bd47-956e-49d0-8e2d-180d55f56550.jpeg?h=365&w=240&dpr=2",
+      "brand": "Acne Studios",
+      "title": "Boot (Men)",
+      "price": "57,490.02",
+      "rating": 4,
+      "categoryid": "men",
+      "product_type": "shoes",
+      "gender": "male"
+    },
+    {
+      "id": 10,
+      "img": "https://n.nordstrommedia.com/id/sr3/77cf0e81-4efa-4f21-8e1c-7313f4f01081.jpeg?h=365&w=240&dpr=2",
+      "brand": "4SDesigns",
+      "title": "Sabot Suede Wooden Clog (Men)",
+      "price": "45,992.02",
+      "rating": 5,
+      "categoryid": "men",
+      "product_type": "shoes",
+      "gender": "male"
+    },
+    {
+      "id": 11,
+      "img": "https://n.nordstrommedia.com/id/sr3/18eebb3f-3b6d-4936-9e65-3c742c7db1c8.jpeg?h=365&w=240&dpr=2",
+      "brand": "ZELLA",
+      "title": "High Waist Studio Lite Pocket 7/8 Leggings",
+      "price": "5,338.36",
+      "rating": 4,
+      "categoryid": "women",
+      "product_type": "clothing",
+      "gender": "female"
+    },
+    {
+      "id": 12,
+      "img": "https://n.nordstrommedia.com/id/sr3/4f6fced4-aaa3-4027-be16-1595249d3fbd.jpeg?h=365&w=240&dpr=2",
+      "brand": "ZELLA",
+      "title": "Gwen Sleeveless Knit Romper",
+      "price": "6,488.16",
+      "rating": 5,
+      "categoryid": "women",
+      "product_type": "clothing",
+      "gender": "female"
+    },
+    {
+      "id": 13,
+      "img": "https://n.nordstrommedia.com/id/sr3/e38422ea-20b3-46c0-ab0e-d9bb692e44a3.jpeg?h=365&w=240&dpr=2",
+      "brand": "ZELLA",
+      "title": "Suns Out Skort",
+      "price": "4,845.59",
+      "rating": 3,
+      "categoryid": "women",
+      "product_type": "clothing",
+      "gender": "female"
+    },
+    {
+      "id": 14,
+      "img": "https://n.nordstrommedia.com/id/sr3/8ff4ed26-16bd-4fbc-8670-fdb8b9add94d.jpeg?h=365&w=240&dpr=2",
+      "brand": "NATORI",
+      "title": "Yogi Convertible Sports Bra",
+      "price": "5,913.26",
+      "rating": 5,
+      "categoryid": "women",
+      "product_type": "clothing",
+      "gender": "female"
+    },
+    {
+      "id": 15,
+      "img": "https://n.nordstrommedia.com/id/sr3/695e787b-dbed-4c5c-b697-29e5f482cdd9.jpeg?h=365&w=240&dpr=2",
+      "brand": "NATORI",
+      "price": "4,517.29",
+      "rating": 2,
+      "categoryid": "women",
+      "product_type": "clothing",
+      "gender": "female"
+    },
+    {
+      "id": 16,
+      "img": "https://n.nordstrommedia.com/id/sr3/a6815cb8-1251-4eee-8f3d-0aef954e8caf.jpeg?h=365&w=240&dpr=2",
+      "brand": "adidas",
+      "title": "Sportswear Future Icons 3-Stripes T-Shirt",
+      "price": "1,650.78",
+      "rating": 3,
+      "categoryid": "women",
+      "product_type": "clothing",
+      "gender": "female"
+    },
+    {
+      "id": 17,
+      "img": "https://n.nordstrommedia.com/id/sr3/7b843707-65cf-466c-ad50-7f490c830d88.jpeg?h=365&w=240&dpr=2",
+      "brand": "adidas",
+      "title": "adidas Originals Trefoil Crewneck Sweatshirt",
+      "price": "4,106.43",
+      "rating": 5,
+      "categoryid": "women",
+      "product_type": "clothing",
+      "gender": "female"
+    },
+    {
+      "id": 18,
+      "img": "https://n.nordstrommedia.com/id/sr3/27d36198-db40-4dfe-8078-cd8eb3a589a8.jpeg?h=365&w=240&dpr=2",
+      "brand": "Dolce Vita",
+      "title": "Paily Slide Sandal",
+      "price": " 10,266.08",
+      "rating": 5,
+      "categoryid": "women",
+      "product_type": "shoes",
+      "gender": "female"
+    },
+    {
+      "id": 19,
+      "img": "https://n.nordstrommedia.com/id/sr3/0dce0b60-d9cd-41a7-84b1-149b3ae0bd83.jpeg?h=365&w=240&dpr=2",
+      "brand": "Dolce Vita",
+      "title": "Clifton 8 Running Shoe (Women)",
+      "price": "",
+      "rating": 2.5,
+      "categoryid": "women",
+      "product_type": "shoes",
+      "gender": "female"
+    },
+    {
+      "id": 20,
+      "img": "https://n.nordstrommedia.com/id/sr3/92a91705-8bbf-41d0-9b46-6e5ae37e812e.jpeg?h=365&w=240&dpr=2",
+      "brand": "NIKE",
+      "title": "Blazer Low '77 Jumbo Snea(Women)",
+      "price": "7,802.22",
+      "rating": 5,
+      "categoryid": "women",
+      "product_type": "shoes",
+      "gender": "female"
+    },
+    {
+      "id": 21,
+      "img": "",
+      "brand": "",
+      "title": "",
+      "price": "",
+      "rating": 5,
+      "categoryid": "women",
+      "product_type": "shoes",
+      "gender": "female"
+    },
+    {
+      "id": 22,
+      "img": "",
+      "brand": "",
+      "title": "",
+      "price": "",
+      "rating": 5,
+      "categoryid": "women",
+      "product_type": "shoes",
+      "gender": "female"
+    },
+    {
+      "id": 24,
+      "img": "",
+      "brand": "",
+      "title": "",
+      "price": "",
+      "rating": 5,
+      "categoryid": "women",
+      "product_type": "shoes",
+      "gender": "female"
+    },
+    {
+      "id": 25,
+      "img": "",
+      "brand": "",
+      "title": "",
+      "price": "",
+      "rating": 5,
+      "categoryid": "women",
+      "product_type": "shoes",
+      "gender": "female"
+    },
+    {
+      "id": 26,
+      "img": "",
+      "brand": "",
+      "title": "",
+      "price": "",
+      "rating": 5,
+      "categoryid": "women",
+      "product_type": "shoes",
+      "gender": "female"
+    }
+  ]
+}
