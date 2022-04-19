@@ -28,7 +28,7 @@ export const fetchProductsFailure = () => {
 export const fetchProducts = () => (dispatch) => {
   dispatch(fetchProductsRequest());
   axios
-    .get("https://jsonplaceholder.typicode.com/posts")
+    .get("http://localhost:8000/products")
     .then((res) => res.json())
     .then((res) => dispatch(fetchProductsSuccess(res)))
     .catch((err) => dispatch(fetchProductsRequest(err)));
