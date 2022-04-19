@@ -71,3 +71,49 @@
 .mid_left > img {
   margin-left: 30px;
 }
+
+/* Nav header */
+.nav_header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  justify-content: space-around;
+}
+
+.nav_header > li {
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.nav_header > li:nth-child(1):active {
+  border-bottom: 2px solid #d61f27;
+  color: #d61f27;
+}
+
+.nav_header > li:hover {
+  border-bottom: 2px solid #000000;
+}
+
+.sign_btn {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  height: 200px;
+}
+
+.sign_btn > h3 {
+  position: relative;
+  top: 50px;
+}
+
+.sign_btn > button {
+  position: relative;
+  top: 60px;
+  width: 250px;
+  height: 40px;
+  background-color: #ffffff;
+  outline: none;
+  border-color: 0.5px solid #000 !important;
+  cursor: pointer;
+}

@@ -30,7 +30,7 @@ const Header = () => {
           />
         </div>
         <div className="mid_input">
-          <SearchIcon font-size="20px" className="searchicon" />
+          <SearchIcon fontSize="20px" className="searchicon" />
           <input type="text" placeholder="Search for products or brands" />
         </div>
 
@@ -41,6 +41,28 @@ const Header = () => {
             <CardTravelIcon />
           </div>
         </div>
+      </div>
+
+      {/* Nav header */}
+
+      <div className="nav_header">
+        <li>Sale</li>
+        <li>Women</li>
+        <li>Men</li>
+        <li>Kids</li>
+        <li>Brands</li>
+        <li>Young Adult</li>
+        <li>Activewear</li>
+        <li>Home</li>
+        <li>Beauty</li>
+        <li>Beauty</li>
+        <li>Designer</li>
+        <li>Gifts</li>
+      </div>
+
+      <div className="sign_btn">
+        <h3>Shop what you love-faster and easier</h3>
+        <button>Sign In or Create Account</button>
       </div>
     </div>
   );

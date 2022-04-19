@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../../Redux/Actions";
+import ProductCategoryHome from "../main/ProductCategoryhome/ProductCategoryHome";
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -24,9 +25,7 @@ const Products = () => {
 
   return (
     <div>
-      {list.map((d) => {
-        return <div>{d.title}</div>;
-      })}
+      <ProductCategoryHome dbData={data} />
     </div>
   );
 };
