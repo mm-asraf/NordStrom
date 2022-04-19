@@ -4,7 +4,6 @@ import { fetchProducts } from "../../Redux/products/Actions";
 
 const Products = () => {
   const dispatch = useDispatch();
-  const [list, setList] = useState([]);
 
   useEffect(() => {
     dispatch(fetchProducts());
