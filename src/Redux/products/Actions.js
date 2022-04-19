@@ -33,3 +33,12 @@ export const fetchProducts = () => (dispatch) => {
     .then((res) => dispatch(fetchProductsSuccess(res)))
     .catch((err) => dispatch(fetchProductsRequest(err)));
 };
+
+export const fetchCat = () => (dispatch) => {
+  dispatch(fetchProductsRequest());
+  axios
+    .get("http://localhost:8000/categories")
+    .then((res) => res.data)
+    .then((res) => dispatch(fetchProductsSuccess(res)))
+    .catch((err) => dispatch(fetchProductsRequest(err)));
+};

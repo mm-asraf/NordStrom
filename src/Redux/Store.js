@@ -1,10 +1,9 @@
 import { reducer } from "./products/Reducer";
-import { reducerCategory } from "./Categories/Reducer";
+// import { reducerCategory } from "./Categories/Reducer";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 const rootReducer = combineReducers({
   productData: reducer,
-  categoryData: reducerCategory,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
