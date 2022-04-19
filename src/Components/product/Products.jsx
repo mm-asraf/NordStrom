@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchProducts } from "../../Redux/Actions";
-import ProductCategoryHome from "../main/ProductCategoryhome/ProductCategoryHome";
+import { fetchProducts } from "../../Redux/products/Actions";
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -23,11 +22,7 @@ const Products = () => {
     return <div>Loading...</div>;
   }
 
-  return (
-    <div>
-      <ProductCategoryHome dbData={data} />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Products;

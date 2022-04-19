@@ -97,19 +97,16 @@
 
 .sign_btn {
   width: 100%;
-  position: absolute;
   text-align: center;
   height: 200px;
 }
 
 .sign_btn > h3 {
-  position: relative;
-  top: 50px;
+  margin-top: 50px;
 }
 
 .sign_btn > button {
-  position: relative;
-  top: 60px;
+  margin-top: 12px;
   width: 250px;
   height: 40px;
   background-color: #ffffff;

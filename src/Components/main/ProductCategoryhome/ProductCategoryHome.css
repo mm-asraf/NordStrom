@@ -1,0 +1,40 @@
+.container {
+  width: 100%;
+  height: 360px;
+  display: flex;
+
+  justify-content: space-around;
+}
+
+.product_cards {
+  width: 100%;
+  border-radius: 15px;
+  height: 100%;
+  padding: 10px;
+  margin: 8px 5px;
+  box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.product_cards:hover {
+  transform: scale(1.1);
+}
+
+.product_cards > img {
+  width: 243px;
+  height: 345px;
+  object-fit: fill;
+  margin: 15px;
+  padding: 2px;
+}
+
+.product_cards > p {
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.shop_category {
+  text-align: center;
+  margin: 15px;
+}
