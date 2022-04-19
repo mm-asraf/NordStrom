@@ -29,7 +29,7 @@ export const fetchProducts = () => (dispatch) => {
   dispatch(fetchProductsRequest());
   axios
     .get("http://localhost:8000/products")
-    .then((res) => res.json())
+    .then((res) => res.data)
     .then((res) => dispatch(fetchProductsSuccess(res)))
     .catch((err) => dispatch(fetchProductsRequest(err)));
 };
