@@ -1,8 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductList from "./ProductList";
 import "./ProductSidebar.css";
 import "./script";
-const ProductSidebar = ({ handleprice }) => {
+import { useSelector, useDispatch } from "react-redux";
+import { fetchProducts } from "../../Redux/products/Actions";
+const ProductSidebar = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
+
+  const [price, setPrice] = useState("");
+  const [brands, setBrands] = useState("");
+
+  const data = useSelector((state) => state.productData.products);
+  console.log(data);
+
+  // sort by price
+  useEffect(() => {
+    const sortbyprice = data.sort((a, b) => {
+      if (price === "high to low") {
+        return b.price - a.price;
+      } else if (price === "low to high") {
+        return a.price - b.price;
+      } else {
+        return 0;
+      }
+    });
+    setPrice(sortbyprice);
+  }, [price]);
+
+  // sort by using filter method
+  useEffect(() => {
+    const filterbyBrand = data.filter((d) => {
+      return d.brand === brands;
+    });
+    setBrands(filterbyBrand);
+  }, []);
+  console.log(brands);
+
   return (
     <div>
       <div className="main_prod_container">
@@ -22,11 +59,13 @@ const ProductSidebar = ({ handleprice }) => {
               <b>PRICE</b>
             </button>
             <div className="content">
-              <button onClick={() => handleprice("low to high")}>
+              <button onClick={() => setPrice("low to high")}>
                 Low to High
               </button>
               <br />
-              <button>High to Low</button>
+              <button onClick={() => setPrice("high to low")}>
+                High to Low
+              </button>
               <br />
               <button>Between ₹1000 and ₹10000</button>
               <br />
@@ -38,7 +77,7 @@ const ProductSidebar = ({ handleprice }) => {
               <b>Brand</b>
             </button>
             <div className="content">
-              <button>NIKE</button>
+              <button onClick={() => setBrands("NIKE")}>NIKE</button>
 
               <button>Fear of God Essentials</button>
 
@@ -124,7 +163,20 @@ const ProductSidebar = ({ handleprice }) => {
         {/* product */}
         {/* <ProductList /> */}
         <div className="test">
-          <ProductList />
+          {/* <ProductList /> */}
+          <div className="container">
+            {data.map((d) => {
+              return (
+                <div className="product_cards">
+                  <img src={d.img} alt="product_img" />
+                  <p>{d.title}</p>
+                  <p>{d.price}</p>
+                  <p>{d.brand}</p>
+                  <p>Rating {d.rating} Star</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
