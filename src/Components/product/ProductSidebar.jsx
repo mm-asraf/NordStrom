@@ -46,6 +46,13 @@ const ProductSidebar = () => {
     setDatas(setItem);
   };
 
+  const filterResbyRating = (cat) => {
+    let setItem = data.filter((d) => {
+      return d.rating === cat;
+    });
+    setDatas(setItem);
+  };
+
   const all = (cat) => {
     let setItem = data.filter((d) => {
       return d;
@@ -159,7 +166,7 @@ const ProductSidebar = () => {
               </button>
               <br />
 
-              <button>KEEN</button>
+              <button onClick={() => filterResbyBrand("KEEN")}>KEEN</button>
               <br />
             </div>
             <div className="line2"></div>
@@ -180,11 +187,11 @@ const ProductSidebar = () => {
               <b>Rating</b>
             </button>
             <div className="content">
-              <button>5 star</button>
-              <button>4 star</button>
-              <button>3 Star</button>
-              <button>Between 2 & 4 Star</button>
-              <button>Between 3 & 5 Star</button>
+              <button onClick={() => filterResbyRating(5)}>5 star</button>
+              <button onClick={() => filterResbyRating(4)}>4 star</button>
+              <button onClick={() => filterResbyRating(3)}>3 Star</button>
+              <button onClick={() => filterResbyRating(3.5)}>3.5</button>
+              <button onClick={() => filterResbyRating(4.5)}>4.5</button>
 
               <br />
             </div>
