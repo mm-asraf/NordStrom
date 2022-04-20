@@ -1,16 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../../Redux/products/Actions";
 import "./ProductList.css";
 
 const ProductList = () => {
   const dispatch = useDispatch();
+
+  // products states
+  const [price, setPrice] = useState("");
+
+  //   dispatching products data
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
 
   const data = useSelector((state) => state.productData.products);
   console.log(data);
+
+  // sort by price
 
   return (
     <div>
