@@ -11,15 +11,51 @@ const ProductSidebar = () => {
     dispatch(fetchProducts());
   }, []);
 
-  const [price, setPrice] = useState("");
-  const [brands, setBrands] = useState("");
-
   const data = useSelector((state) => state.productData.products);
   console.log(data);
 
+  const [price, setPrice] = useState("");
+  const [datas, setDatas] = useState(data);
+
+  // filters function
+  const filterResbyBrand = (cat) => {
+    let setItem = data.filter((d) => {
+      return d.brand === cat;
+    });
+    setDatas(setItem);
+  };
+
+  const filterResbyCategoryId = (cat) => {
+    let setItem = data.filter((d) => {
+      return d.categoryid === cat;
+    });
+    setDatas(setItem);
+  };
+
+  const filterResbyProductType = (cat) => {
+    let setItem = data.filter((d) => {
+      return d.product_type === cat;
+    });
+    setDatas(setItem);
+  };
+
+  const filterResbygender = (cat) => {
+    let setItem = data.filter((d) => {
+      return d.gender === cat;
+    });
+    setDatas(setItem);
+  };
+
+  const all = (cat) => {
+    let setItem = data.filter((d) => {
+      return d;
+    });
+    setDatas(setItem);
+  };
+
   // sort by price
   useEffect(() => {
-    const sortbyprice = data.sort((a, b) => {
+    const sortbyprice = datas.sort((a, b) => {
       if (price === "high to low") {
         return b.price - a.price;
       } else if (price === "low to high") {
@@ -30,15 +66,6 @@ const ProductSidebar = () => {
     });
     setPrice(sortbyprice);
   }, [price]);
-
-  // sort by using filter method
-  useEffect(() => {
-    const filterbyBrand = data.filter((d) => {
-      return d.brand === brands;
-    });
-    setBrands(filterbyBrand);
-  }, []);
-  console.log(brands);
 
   return (
     <div>
@@ -59,6 +86,8 @@ const ProductSidebar = () => {
               <b>PRICE</b>
             </button>
             <div className="content">
+              <button onClick={() => all()}>All Products</button>
+
               <button onClick={() => setPrice("low to high")}>
                 Low to High
               </button>
@@ -67,49 +96,67 @@ const ProductSidebar = () => {
                 High to Low
               </button>
               <br />
-              <button>Between ₹1000 and ₹10000</button>
-              <br />
-              <button> Between ₹10000 and ₹50000</button>
-              <br />
             </div>
             <div className="line2"></div>
             <button className="collapsible">
               <b>Brand</b>
             </button>
             <div className="content">
-              <button onClick={() => setBrands("NIKE")}>NIKE</button>
+              <button onClick={() => filterResbyBrand("NIKE")}>NIKE</button>
 
-              <button>Fear of God Essentials</button>
+              <button
+                onClick={() => filterResbyBrand("Fear of God Essentials")}
+              >
+                Fear of God Essentials
+              </button>
 
-              <button>7 Diamonds</button>
+              <button onClick={() => filterResbyBrand("7 Diamonds")}>
+                7 Diamonds
+              </button>
 
-              <button>adidas</button>
+              <button onClick={() => filterResbyBrand("adidas")}>adidas</button>
 
-              <button>Alden</button>
+              <button onClick={() => filterResbyBrand("Alden")}>Alden</button>
 
-              <button>Acne Studios</button>
+              <button onClick={() => filterResbyBrand("Acne Studios")}>
+                Acne Studios
+              </button>
 
-              <button>4SDesigns</button>
+              <button onClick={() => filterResbyBrand("4SDesigns")}>
+                4SDesigns
+              </button>
 
-              <button>ZELLA</button>
+              <button onClick={() => filterResbyBrand("ZELLA")}>ZELLA</button>
 
-              <button>NATORI</button>
+              <button onClick={() => filterResbyBrand("NATORI")}>NATORI</button>
 
-              <button>Dolce Vita</button>
+              <button onClick={() => filterResbyBrand("Dolce Vita")}>
+                Dolce Vita
+              </button>
 
-              <button>NEOUS</button>
+              <button onClick={() => filterResbyBrand("NEOUS")}>NEOUS</button>
 
-              <button>TREASURE & BOND</button>
+              <button onClick={() => filterResbyBrand("TREASURE & BOND")}>
+                TREASURE & BOND
+              </button>
 
-              <button>ZELLA GIR</button>
+              <button onClick={() => filterResbyBrand("ZELLA GIRL")}>
+                ZELLA GIRL
+              </button>
 
-              <button>THE NORTH FACE</button>
+              <button onClick={() => filterResbyBrand("THE NORTH FACE")}>
+                THE NORTH FACE
+              </button>
 
-              <button>NATIVE SHOES</button>
+              <button onClick={() => filterResbyBrand("NATIVE SHOES")}>
+                NATIVE SHOES
+              </button>
 
-              <button>CROCS</button>
+              <button onClick={() => filterResbyBrand("CROCS™")}>CROCS</button>
 
-              <button>CONVERSE</button>
+              <button onClick={() => filterResbyBrand("CONVERSE")}>
+                CONVERSE
+              </button>
               <br />
 
               <button>KEEN</button>
@@ -120,9 +167,13 @@ const ProductSidebar = () => {
               <b>Category</b>
             </button>
             <div className="content">
-              <button>Men</button>
-              <button>Women</button>
-              <button>Kids</button>
+              <button onClick={() => filterResbyCategoryId("men")}>Men</button>
+              <button onClick={() => filterResbyCategoryId("women")}>
+                Women
+              </button>
+              <button onClick={() => filterResbyCategoryId("kids")}>
+                Kids
+              </button>
             </div>
             <div className="line2"></div>
             <button className="collapsible">
@@ -142,18 +193,26 @@ const ProductSidebar = () => {
               <b>Type</b>
             </button>
             <div className="content">
-              <button>Clothing</button>
-              <button>Shoes</button>
+              <button onClick={() => filterResbyProductType("clothing")}>
+                Clothing
+              </button>
+              <button onClick={() => filterResbyProductType("shoes")}>
+                Shoes
+              </button>
             </div>
             <div className="line2"></div>
             <button className="collapsible">
               <b>By Gender</b>
             </button>
             <div className="content">
-              <button>Male</button>
-              <button>Female</button>
-              <button>Kid Boys</button>
-              <button>Kid Girls</button>
+              <button onClick={() => filterResbygender("boys")}>Male</button>
+              <button onClick={() => filterResbygender("girls")}>Female</button>
+              <button onClick={() => filterResbygender("male")}>
+                Kid Boys
+              </button>
+              <button onClick={() => filterResbygender("female")}>
+                Kid Girls
+              </button>
             </div>
 
             <div className="line2"></div>
@@ -165,7 +224,7 @@ const ProductSidebar = () => {
         <div className="test">
           {/* <ProductList /> */}
           <div className="container">
-            {data.map((d) => {
+            {datas.map((d) => {
               return (
                 <div className="product_cards">
                   <img src={d.img} alt="product_img" />
