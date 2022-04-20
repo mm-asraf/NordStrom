@@ -2,7 +2,7 @@ import React from "react";
 import ProductList from "./ProductList";
 import "./ProductSidebar.css";
 import "./script";
-const ProductSidebar = () => {
+const ProductSidebar = ({ handleprice }) => {
   return (
     <div>
       <div className="main_prod_container">
@@ -22,27 +22,15 @@ const ProductSidebar = () => {
               <b>PRICE</b>
             </button>
             <div className="content">
-              <input type="checkbox" className="price1" name="price1" />
-              <label for="price1">Low to High</label>
+              <button onClick={() => handleprice("low to high")}>
+                Low to High
+              </button>
               <br />
-
-              <input type="checkbox" className="price2" name="price2" />
-              <label for="price2">
-                High to Low
-                <br />
-              </label>
+              <button>High to Low</button>
               <br />
-              <input type="checkbox" className="price3" name="price3" />
-              <label for="price3">
-                Between ₹1000 and ₹10000
-                <br />
-              </label>
+              <button>Between ₹1000 and ₹10000</button>
               <br />
-              <input type="checkbox" className="price4" name="price4" />
-              <label for="price4">
-                Between ₹10000 and ₹50000
-                <br />
-              </label>
+              <button> Between ₹10000 and ₹50000</button>
               <br />
             </div>
             <div className="line2"></div>
@@ -50,131 +38,42 @@ const ProductSidebar = () => {
               <b>Brand</b>
             </button>
             <div className="content">
-              <input
-                type="checkbox"
-                className="brand-type1"
-                name="brand-type1"
-              />
-              <label for="brand-type1">NIKE</label>
+              <button>NIKE</button>
 
-              <input
-                type="checkbox"
-                className="brand-type2"
-                name="brand-type2"
-              />
-              <label for="brand-type2">Fear of God Essentials</label>
+              <button>Fear of God Essentials</button>
+
+              <button>7 Diamonds</button>
+
+              <button>adidas</button>
+
+              <button>Alden</button>
+
+              <button>Acne Studios</button>
+
+              <button>4SDesigns</button>
+
+              <button>ZELLA</button>
+
+              <button>NATORI</button>
+
+              <button>Dolce Vita</button>
+
+              <button>NEOUS</button>
+
+              <button>TREASURE & BOND</button>
+
+              <button>ZELLA GIR</button>
+
+              <button>THE NORTH FACE</button>
+
+              <button>NATIVE SHOES</button>
+
+              <button>CROCS</button>
+
+              <button>CONVERSE</button>
               <br />
-              <input
-                type="checkbox"
-                className="brand-type3"
-                name="brand-type3"
-              />
-              <label for="brand-type3">7 Diamonds</label>
 
-              <input
-                type="checkbox"
-                className="brand-type4"
-                name="brand-type4"
-              />
-              <label for="brand-type4">adidas</label>
-
-              <input
-                type="checkbox"
-                className="brand-type5"
-                name="brand-type5"
-              />
-              <label for="brand-type5">Alden</label>
-              <br />
-              <input
-                type="checkbox"
-                className="brand-type6"
-                name="brand-type6"
-              />
-              <label for="brand-type6">Acne Studios</label>
-
-              <input
-                type="checkbox"
-                className="brand-type7"
-                name="brand-type7"
-              />
-              <label for="brand-type7">4SDesigns</label>
-              <br />
-              <input
-                type="checkbox"
-                className="brand-type8"
-                name="brand-type8"
-              />
-              <label for="brand-type8">ZELLA</label>
-
-              <input
-                type="checkbox"
-                className="brand-type9"
-                name="brand-type9"
-              />
-              <label for="brand-type9">NATORI</label>
-
-              <input
-                type="checkbox"
-                className="brand-type10"
-                name="brand-type10"
-              />
-              <label for="brand-type10">Dolce Vita</label>
-
-              <input
-                type="checkbox"
-                className="brand-type11"
-                name="brand-type11"
-              />
-              <label for="brand-type11">NEOUS</label>
-              <br />
-              <input
-                type="checkbox"
-                className="brand-type12"
-                name="brand-type12"
-              />
-              <label for="brand-type12">TREASURE & BOND</label>
-
-              <input
-                type="checkbox"
-                className="brand-type13"
-                name="brand-type13"
-              />
-              <label for="brand-type13">ZELLA GIRL</label>
-              <br />
-              <input
-                type="checkbox"
-                className="brand-type14"
-                name="brand-type14"
-              />
-              <label for="brand-type14">THE NORTH FACE</label>
-              <br />
-              <input
-                type="checkbox"
-                className="brand-type15"
-                name="brand-type15"
-              />
-              <label for="brand-type15">NATIVE SHOES</label>
-
-              <input
-                type="checkbox"
-                className="brand-type16"
-                name="brand-type16"
-              />
-              <label for="brand-type16">CROCS</label>
-              <br />
-              <input
-                type="checkbox"
-                className="brand-type17"
-                name="brand-type17"
-              />
-              <label for="brand-type17">CONVERSE</label>
-
-              <input
-                type="checkbox"
-                className="brand-type18"
-                name="brand-type18"
-              />
-              <label for="brand-type18">KEEN</label>
+              <button>KEEN</button>
               <br />
             </div>
             <div className="line2"></div>
@@ -182,54 +81,21 @@ const ProductSidebar = () => {
               <b>Category</b>
             </button>
             <div className="content">
-              <input type="checkbox" className="type1" name="type1" />
-              <label for="type1">Men</label>
-
-              <input type="checkbox" className="type2" name="type2" />
-              <label for="type2">Women</label>
-
-              <input type="checkbox" className="type3" name="type3" />
-              <label for="type3">Kids</label>
+              <button>Men</button>
+              <button>Women</button>
+              <button>Kids</button>
             </div>
             <div className="line2"></div>
             <button className="collapsible">
               <b>Rating</b>
             </button>
             <div className="content">
-              <input
-                type="checkbox"
-                className="occassion-type1"
-                name="occassion-type1"
-              />
-              <label for="occassion-type1">5 star</label>
-              <br />
-              <input
-                type="checkbox"
-                className="occassion-type2"
-                name="occassion-type2"
-              />
-              <label for="occassion-type2">4 star</label>
-              <br />
-              <input
-                type="checkbox"
-                className="occassion-type3"
-                name="occassion-type3"
-              />
-              <label for="occassion-type3">3 Star</label>
-              <br />
-              <input
-                type="checkbox"
-                className="occassion-type4"
-                name="occassion-type4"
-              />
-              <label for="occassion-type4">Between 2 & 4 Star</label>
-              <br />
-              <input
-                type="checkbox"
-                className="occassion-type5"
-                name="occassion-type5"
-              />
-              <label for="occassion-type5">Between 3 & 5 Star</label>
+              <button>5 star</button>
+              <button>4 star</button>
+              <button>3 Star</button>
+              <button>Between 2 & 4 Star</button>
+              <button>Between 3 & 5 Star</button>
+
               <br />
             </div>
             <div className="line2"></div>
@@ -237,52 +103,18 @@ const ProductSidebar = () => {
               <b>Type</b>
             </button>
             <div className="content">
-              <input
-                type="checkbox"
-                className="product-type1"
-                name="product-type1"
-              />
-              <label for="product-type1">Shoes</label>
-
-              <input
-                type="checkbox"
-                className="product-type2"
-                name="product-type2"
-              />
-              <label for="product-type2">Clothing</label>
+              <button>Clothing</button>
+              <button>Shoes</button>
             </div>
             <div className="line2"></div>
             <button className="collapsible">
               <b>By Gender</b>
             </button>
             <div className="content">
-              <input
-                type="checkbox"
-                className="gender-type1"
-                name="gender-type1"
-              />
-              <label for="gender-type1">Male</label>
-
-              <input
-                type="checkbox"
-                className="gender-type2"
-                name="gender-type2"
-              />
-              <label for="gender-type2">female</label>
-
-              <input
-                type="checkbox"
-                className="gender-type3"
-                name="gender-type3"
-              />
-              <label for="gender-type3">Kid Boys</label>
-              <br />
-              <input
-                type="checkbox"
-                className="gender-type4"
-                name="gender-type4"
-              />
-              <label for="gender-type4">Kid Girls</label>
+              <button>Male</button>
+              <button>Female</button>
+              <button>Kid Boys</button>
+              <button>Kid Girls</button>
             </div>
 
             <div className="line2"></div>
