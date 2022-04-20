@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../../Redux/products/Actions";
+import "./ProductList.css";
 
 const ProductList = () => {
   const dispatch = useDispatch();
@@ -13,11 +14,12 @@ const ProductList = () => {
 
   return (
     <div>
-      <div pro_cards>
+      <div className="container">
         {data.map((d) => {
           return (
-            <div>
+            <div className="product_cards">
               <img src={d.img} alt="product_img" />
+              <p>{d.title}</p>
             </div>
           );
         })}

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../../Redux/products/Actions";
-import ProductSidebar from "./ProductSidebar";
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -22,11 +21,7 @@ const Products = () => {
     return <div>Loading...</div>;
   }
 
-  return (
-    <div>
-      <ProductSidebar data={data} />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Products;
