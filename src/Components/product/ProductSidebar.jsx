@@ -234,9 +234,8 @@ const ProductSidebar = () => {
         </div>
 
         {/* product */}
-        {/* <ProductList /> */}
+
         <div className="test">
-          {/* <ProductList /> */}
           <div className="container">
             {datas.map((d, i) => {
               return (
