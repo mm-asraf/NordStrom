@@ -20,7 +20,7 @@ const ProductSidebar = () => {
 
   useEffect(() => {
     setDatas(data);
-  });
+  }, [data]);
 
   // filters function
   const filterResbyBrand = (cat) => {
