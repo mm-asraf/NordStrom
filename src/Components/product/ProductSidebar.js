@@ -5,8 +5,12 @@ import "./script";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../../Redux/products/Actions";
 import Header from "../Header/Header";
+import { Link } from "react-router-dom";
+
 const ProductSidebar = () => {
   const dispatch = useDispatch();
+  const [price, setPrice] = useState("");
+  const [datas, setDatas] = useState([]);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -15,8 +19,9 @@ const ProductSidebar = () => {
   const data = useSelector((state) => state.productData.products);
   console.log(data);
 
-  const [price, setPrice] = useState("");
-  const [datas, setDatas] = useState(data);
+  useEffect(() => {
+    setDatas(data);
+  });
 
   // filters function
   const filterResbyBrand = (cat) => {
@@ -233,14 +238,15 @@ const ProductSidebar = () => {
         <div className="test">
           {/* <ProductList /> */}
           <div className="container">
-            {datas.map((d) => {
+            {datas.map((d, i) => {
               return (
-                <div className="product_cards">
+                <div className="product_cards" key={i}>
                   <img src={d.img} alt="product_img" />
                   <p>{d.title}</p>
                   <p>{d.price}</p>
                   <p>{d.brand}</p>
                   <p>Rating {d.rating} Star</p>
+                  <Link to={`/products/${d.id}`}>showdetails</Link>
                 </div>
               );
             })}

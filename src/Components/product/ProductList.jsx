@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchProducts } from "../../Redux/products/Actions";
 import "./ProductList.css";
 
@@ -20,7 +21,7 @@ const ProductList = () => {
   return (
     <div>
       <div className="container">
-        {data.map((d) => {
+        {/* {data.map((d) => {
           return (
             <div className="product_cards">
               <img src={d.img} alt="product_img" />
@@ -28,7 +29,7 @@ const ProductList = () => {
               <p>{d.price}</p>
             </div>
           );
-        })}
+        })} */}
       </div>
     </div>
   );
