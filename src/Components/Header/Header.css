@@ -45,13 +45,13 @@
   border: 2px solid #bbbbbb;
 }
 
-.mid_input > SearchIcon {
-  font-size: large;
-  margin-top: 5px;
+.searchicon {
+  /* font-size: large; */
+  /* margin: 2px; */
 }
 .mid_input > input {
   width: 80%;
-  margin-left: 10px;
+  margin-left: 20px;
   height: 100%;
   outline: none;
   border: none;

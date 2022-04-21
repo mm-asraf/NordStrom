@@ -32,7 +32,7 @@ const Header = () => {
           />
         </div>
         <div className="mid_input">
-          <SearchIcon fontSize="20px" className="searchicon" />
+          <SearchIcon fontSize="medium" className="searchicon" />
           <input type="text" placeholder="Search for products or brands" />
         </div>
 

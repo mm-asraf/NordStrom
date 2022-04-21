@@ -235,11 +235,11 @@ const ProductSidebar = () => {
         {/* product */}
 
         <div className="test">
-          <div className="container">
+          <div className="container1">
             {datas.map((d, i) => {
               return (
-                <div className="product_cards" key={i}>
-                  <img src={d.img} alt="product_img" />
+                <div className="product_cards1" key={i}>
+                  <img src={d.img} alt="product_img1" />
                   <p>{d.title}</p>
                   <p>{d.price}</p>
                   <p>{d.brand}</p>

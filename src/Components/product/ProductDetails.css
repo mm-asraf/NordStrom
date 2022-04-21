@@ -1,0 +1,41 @@
+.top_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  border-radius: 15px;
+  box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.top_container:hover {
+  transform: scale(1.1);
+}
+
+.main_container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 400px;
+}
+
+.main_container > .imag_tag > img {
+  width: 200px;
+  height: 250px;
+}
+
+.detail {
+  margin-left: 10px;
+}
+
+.cart_btn {
+  margin: 10px;
+  padding: 9px;
+  cursor: pointer;
+}
