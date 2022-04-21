@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ProductList from "./ProductList";
 import "./ProductSidebar.css";
 import "./script";
 import { useSelector, useDispatch } from "react-redux";
