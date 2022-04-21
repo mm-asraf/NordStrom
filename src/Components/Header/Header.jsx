@@ -2,6 +2,8 @@ import React from "react";
 import "./Header.css";
 import CardTravelIcon from "@mui/icons-material/CardTravel";
 import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
+import ProductCategoryHome from "../main/ProductCategoryhome/ProductCategoryHome";
 
 const Header = () => {
   return (
@@ -46,7 +48,10 @@ const Header = () => {
       {/* Nav header */}
 
       <div className="nav_header">
-        <li>Sale</li>
+        <li>
+          <Link to="/products">Sale</Link>
+        </li>
+        {/* <li>Sale</li> */}
         <li>Women</li>
         <li>Men</li>
         <li>Kids</li>

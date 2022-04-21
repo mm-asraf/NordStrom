@@ -4,6 +4,7 @@ import "./ProductSidebar.css";
 import "./script";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../../Redux/products/Actions";
+import Header from "../Header/Header";
 const ProductSidebar = () => {
   const dispatch = useDispatch();
 
@@ -76,6 +77,7 @@ const ProductSidebar = () => {
 
   return (
     <div>
+      <Header />
       <div className="main_prod_container">
         <div className=".filter_container">
           <div className="filter-cont">

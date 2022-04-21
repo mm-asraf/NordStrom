@@ -86,6 +86,11 @@
   cursor: pointer;
 }
 
+.nav_header > li > Link {
+  list-style-type: none;
+  cursor: pointer;
+}
+
 .nav_header > li:nth-child(1):active {
   border-bottom: 2px solid #d61f27;
   color: #d61f27;
@@ -98,7 +103,7 @@
 .sign_btn {
   width: 100%;
   text-align: center;
-  height: 200px;
+  height: 100px;
 }
 
 .sign_btn > h3 {
@@ -106,7 +111,7 @@
 }
 
 .sign_btn > button {
-  margin-top: 12px;
+  margin-top: 8px;
   width: 250px;
   height: 40px;
   background-color: #ffffff;

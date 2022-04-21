@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./ProductCategoryHome.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCat } from "../../../Redux/products/Actions";
+import { Link } from "react-router-dom";
 
 const ProductCategoryHome = () => {
   const dispatch = useDispatch();
