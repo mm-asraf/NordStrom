@@ -5,13 +5,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../../Redux/products/Actions";
 import Header from "../Header/Header";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 const ProductSidebar = () => {
   const dispatch = useDispatch();
   const [price, setPrice] = useState("");
   const [datas, setDatas] = useState([]);
-  const [product, setProduct] = useState();
-  const [allproduct, setAllProduct] = useState();
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -23,11 +22,6 @@ const ProductSidebar = () => {
   useEffect(() => {
     setDatas(data);
   }, [data]);
-
-  // const handleAddToCart = (datas) => {
-  //   dispatch(addToCart(datas));
-  //   console.log(datas);
-  // };
 
   // filters function
   const filterResbyBrand = (cat) => {
@@ -100,6 +94,7 @@ const ProductSidebar = () => {
           </div>
 
           {/* dropdowns */}
+          {/* filter functions  */}
           <div className="dropdowns">
             <div className="line1"></div>
             <button className="collapsible">
@@ -251,7 +246,9 @@ const ProductSidebar = () => {
                   <p>{d.price}</p>
                   <p>{d.brand}</p>
                   <p>Rating {d.rating} Star</p>
-                  <Link to={`/products/${d.id}`}>showdetails</Link>
+                  <Button className="prod_btn" variant="outlined">
+                    <Link to={`/products/${d.id}`}>showdetails</Link>
+                  </Button>
                 </div>
               );
             })}

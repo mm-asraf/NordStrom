@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -37,10 +38,14 @@ const ProductDetails = () => {
             <h4>Product Name: {products.title}</h4>
             <h4>Brand: {products.brand}</h4>
             <h4>Price: INR {products.price}</h4>
-            <h4>Rating: {products.rating} Star</h4>
-            <button className="cart_btn" onClick={() => addProd(products)}>
+            <h4 className="rat">Rating: {products.rating} Star</h4>
+            <Button
+              variant="outlined"
+              className="cart_btn"
+              onClick={() => addProd(products)}
+            >
               Add to Cart
-            </button>
+            </Button>
           </div>
         </div>
       </div>

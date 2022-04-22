@@ -116,3 +116,7 @@
   border-color: 0.5px solid #000 !important;
   cursor: pointer;
 }
+
+.cart_bag {
+  margin-top: 5px;
+}

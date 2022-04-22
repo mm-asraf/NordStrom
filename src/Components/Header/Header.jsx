@@ -88,7 +88,7 @@ const Header = () => {
 
           <div className="cart_bag">
             <Link to="cart">cart({cartD.length})</Link>
-            <CardTravelIcon />
+            {/* <CardTravelIcon /> */}
           </div>
         </div>
       </div>
