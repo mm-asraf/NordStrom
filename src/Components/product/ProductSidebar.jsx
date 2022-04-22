@@ -10,6 +10,8 @@ const ProductSidebar = () => {
   const dispatch = useDispatch();
   const [price, setPrice] = useState("");
   const [datas, setDatas] = useState([]);
+  const [product, setProduct] = useState();
+  const [allproduct, setAllProduct] = useState();
 
   useEffect(() => {
     dispatch(fetchProducts());

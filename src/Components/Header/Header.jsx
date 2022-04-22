@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import ProductCategoryHome from "../main/ProductCategoryhome/ProductCategoryHome";
 import { Box, Modal, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
+import { useSelector, useDispatch } from "react-redux";
 
 const style = {
   position: "absolute",
@@ -24,6 +25,13 @@ const Header = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const cartD = useSelector((state) => state.cart);
+
+  const google = () => {
+    window.open("http://localhost:5000/auth/google", "_self");
+  };
+
   return (
     <div>
       {/* top header */}
@@ -55,7 +63,10 @@ const Header = () => {
 
         <div className="mid_right">
           <div className="signin">
-            <Button onClick={handleOpen}> SignIn</Button>
+            <Button varient="outline" onClick={google}>
+              Sign In
+            </Button>
+            <Button onClick={handleOpen}> Modal</Button>
             <Modal
               open={open}
               onClose={handleClose}
@@ -76,6 +87,7 @@ const Header = () => {
           </div>
 
           <div className="cart_bag">
+            <Link to="cart">cart({cartD.length})</Link>
             <CardTravelIcon />
           </div>
         </div>
