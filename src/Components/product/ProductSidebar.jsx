@@ -16,11 +16,16 @@ const ProductSidebar = () => {
   }, []);
 
   const data = useSelector((state) => state.productData.products);
-  console.log(data);
+  console.log(datas);
 
   useEffect(() => {
     setDatas(data);
   }, [data]);
+
+  // const handleAddToCart = (datas) => {
+  //   dispatch(addToCart(datas));
+  //   console.log(datas);
+  // };
 
   // filters function
   const filterResbyBrand = (cat) => {

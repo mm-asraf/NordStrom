@@ -4,8 +4,26 @@ import CardTravelIcon from "@mui/icons-material/CardTravel";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 import ProductCategoryHome from "../main/ProductCategoryhome/ProductCategoryHome";
+import { Box, Modal, Typography } from "@mui/material";
+import Button from "@mui/material/Button";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  height: 300,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 
 const Header = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <div>
       {/* top header */}
@@ -32,12 +50,30 @@ const Header = () => {
           />
         </div>
         <div className="mid_input">
-          <SearchIcon fontSize="medium" className="searchicon" />
           <input type="text" placeholder="Search for products or brands" />
         </div>
 
         <div className="mid_right">
-          <div className="signin">SignIn</div>
+          <div className="signin">
+            <Button onClick={handleOpen}> SignIn</Button>
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  Text in a modal
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  <input type="text" placeholder="Enter username" />
+                  <br />
+                  <input type="text" placeholder="Enter password" />
+                </Typography>
+              </Box>
+            </Modal>
+          </div>
 
           <div className="cart_bag">
             <CardTravelIcon />

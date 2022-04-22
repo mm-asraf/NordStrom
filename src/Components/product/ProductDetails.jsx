@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addToCart } from "../../Redux/cart/Actions";
 import Header from "../Header/Header";
 import "./ProductDetails.css";
 
 const ProductDetails = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const [details, setDetails] = useState("");
 
   useEffect(() => {
