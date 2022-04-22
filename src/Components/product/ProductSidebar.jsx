@@ -3,9 +3,9 @@ import "./ProductSidebar.css";
 import "./script";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../../Redux/products/Actions";
-import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
+import HeaderSide from "../Header/HeaderSide";
 
 const ProductSidebar = () => {
   const dispatch = useDispatch();
@@ -80,9 +80,20 @@ const ProductSidebar = () => {
     setPrice(sortbyprice);
   }, [price]);
 
+  // filter by search
+  const filterSearch = (event) => {
+    const val = event.target.value.toLowerCase();
+    const filterbyName = data.filter((product) =>
+      `${product.title} ${product.brand} ${product.categoryId}`
+        .toLowerCase()
+        .includes(val)
+    );
+    setDatas(filterbyName);
+  };
+
   return (
     <div>
-      <Header />
+      <HeaderSide />
       <div className="main_prod_container">
         <div className=".filter_container">
           <div className="filter-cont">
@@ -237,6 +248,14 @@ const ProductSidebar = () => {
         {/* product */}
 
         <div className="test">
+          <div className="inp_search">
+            <input
+              type="text"
+              onInput={filterSearch}
+              className="search-box-2"
+              placeholder="Search Your products by brand,category and name........"
+            />
+          </div>
           <div className="container1">
             {datas.map((d, i) => {
               return (

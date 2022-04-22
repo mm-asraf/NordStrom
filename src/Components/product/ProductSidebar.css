@@ -81,11 +81,11 @@
   background-color: pink;
 }
 
-.main_prod_container > .test {
+/* .main_prod_container > .test {
   grid-column: 2 / span 1;
-  /* background-color: yellow; */
+  background-color: yellow;
   margin-top: 70px;
-}
+} */
 
 .container1 {
   display: grid;
@@ -126,4 +126,16 @@
 
 .prod_btn {
   margin-left: 30px;
+}
+
+.inp_search {
+  margin-bottom: 60px;
+}
+
+.search-box-2 {
+  width: 80%;
+  height: 40px;
+  padding: 10px;
+  font-size: 18px;
+  outline: none;
 }
