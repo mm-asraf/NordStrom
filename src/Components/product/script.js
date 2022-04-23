@@ -3,7 +3,7 @@ console.log(coll);
 for (let i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function () {
     this.classList.toggle("active");
-    console.log(i);
+    // console.log(i);
     let content = this.nextElementSibling;
     if (content.style.maxHeight) {
       content.style.maxHeight = null;

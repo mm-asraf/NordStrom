@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./ProductSidebar.css";
-import "./script";
+import "../../App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../../Redux/products/Actions";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import HeaderSide from "../Header/HeaderSide";
+import useCollapse from "react-collapsed";
 
-const ProductSidebar = () => {
+const Col = () => {
   const dispatch = useDispatch();
   const [price, setPrice] = useState("");
   const [datas, setDatas] = useState([]);
+  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -107,141 +109,141 @@ const ProductSidebar = () => {
           {/* dropdowns */}
           {/* filter functions  */}
           <div className="dropdowns">
-            <div className="line1"></div>
-            <button className="collapsible">
-              <b>PRICE</b>
-            </button>
-            <div className="content">
-              <button onClick={() => all()}>All Products</button>
+            <div className="collapsible">
+              <div className="header" {...getToggleProps()}>
+                All Filter Functions
+                {/* {isExpanded ? "Collapse" : "Expand"} */}
+              </div>
+              <div {...getCollapseProps()}>
+                <div className="content">
+                  <button onClick={() => all()}>All Products</button>
 
-              <button onClick={() => setPrice("low to high")}>
-                Low to High
-              </button>
-              <br />
-              <button onClick={() => setPrice("high to low")}>
-                High to Low
-              </button>
-              <br />
+                  {/* filter by price */}
+                  <h4 className="fl-p">Filter by price</h4>
+                  <button onClick={() => setPrice("low to high")}>
+                    Low to High
+                  </button>
+
+                  <button onClick={() => setPrice("high to low")}>
+                    High to Low
+                  </button>
+
+                  {/* filter by brands */}
+                  <h4 className="fl-b">Filter by Brands</h4>
+                  <button onClick={() => filterResbyBrand("NIKE")}>NIKE</button>
+
+                  <button
+                    onClick={() => filterResbyBrand("Fear of God Essentials")}
+                  >
+                    Fear of God Essentials
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("7 Diamonds")}>
+                    7 Diamonds
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("adidas")}>
+                    adidas
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("Alden")}>
+                    Alden
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("Acne Studios")}>
+                    Acne Studios
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("4SDesigns")}>
+                    4SDesigns
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("ZELLA")}>
+                    ZELLA
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("NATORI")}>
+                    NATORI
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("Dolce Vita")}>
+                    Dolce Vita
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("NEOUS")}>
+                    NEOUS
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("TREASURE & BOND")}>
+                    TREASURE & BOND
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("ZELLA GIRL")}>
+                    ZELLA GIRL
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("THE NORTH FACE")}>
+                    THE NORTH FACE
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("NATIVE SHOES")}>
+                    NATIVE SHOES
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("CROCS™")}>
+                    CROCS
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("CONVERSE")}>
+                    CONVERSE
+                  </button>
+
+                  <button onClick={() => filterResbyBrand("KEEN")}>KEEN</button>
+
+                  {/* filter by category */}
+                  <h4 className="fl-cat">Filter by Category</h4>
+
+                  <button onClick={() => filterResbyCategoryId("men")}>
+                    Men
+                  </button>
+                  <button onClick={() => filterResbyCategoryId("women")}>
+                    Women
+                  </button>
+                  <button onClick={() => filterResbyCategoryId("kids")}>
+                    Kids
+                  </button>
+
+                  {/* filter by Ratings */}
+                  <h4 className="fl-r">Filter by Ratings</h4>
+
+                  <button onClick={() => filterResbyRating(5)}>5 star</button>
+                  <button onClick={() => filterResbyRating(4)}>4 star</button>
+                  <button onClick={() => filterResbyRating(3)}>3 Star</button>
+                  <button onClick={() => filterResbyRating(3.5)}>3.5</button>
+                  <button onClick={() => filterResbyRating(4.5)}>4.5</button>
+
+                  {/* filter by product Type */}
+                  <h4 className="fl-pc">Filter by Product Category</h4>
+
+                  <button onClick={() => filterResbyProductType("clothing")}>
+                    Clothing
+                  </button>
+                  <button onClick={() => filterResbyProductType("shoes")}>
+                    Shoes
+                  </button>
+
+                  {/* filter by gender */}
+                  <h4 className="fl-k">Filter by Category Kids</h4>
+
+                  <button onClick={() => filterResbygender("boys")}>
+                    Boys
+                  </button>
+                  <button onClick={() => filterResbygender("girls")}>
+                    Girls
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className="line2"></div>
-            <button className="collapsible">
-              <b>Brand</b>
-            </button>
-            <div className="content">
-              <button onClick={() => filterResbyBrand("NIKE")}>NIKE</button>
-
-              <button
-                onClick={() => filterResbyBrand("Fear of God Essentials")}
-              >
-                Fear of God Essentials
-              </button>
-
-              <button onClick={() => filterResbyBrand("7 Diamonds")}>
-                7 Diamonds
-              </button>
-
-              <button onClick={() => filterResbyBrand("adidas")}>adidas</button>
-
-              <button onClick={() => filterResbyBrand("Alden")}>Alden</button>
-
-              <button onClick={() => filterResbyBrand("Acne Studios")}>
-                Acne Studios
-              </button>
-
-              <button onClick={() => filterResbyBrand("4SDesigns")}>
-                4SDesigns
-              </button>
-
-              <button onClick={() => filterResbyBrand("ZELLA")}>ZELLA</button>
-
-              <button onClick={() => filterResbyBrand("NATORI")}>NATORI</button>
-
-              <button onClick={() => filterResbyBrand("Dolce Vita")}>
-                Dolce Vita
-              </button>
-
-              <button onClick={() => filterResbyBrand("NEOUS")}>NEOUS</button>
-
-              <button onClick={() => filterResbyBrand("TREASURE & BOND")}>
-                TREASURE & BOND
-              </button>
-
-              <button onClick={() => filterResbyBrand("ZELLA GIRL")}>
-                ZELLA GIRL
-              </button>
-
-              <button onClick={() => filterResbyBrand("THE NORTH FACE")}>
-                THE NORTH FACE
-              </button>
-
-              <button onClick={() => filterResbyBrand("NATIVE SHOES")}>
-                NATIVE SHOES
-              </button>
-
-              <button onClick={() => filterResbyBrand("CROCS™")}>CROCS</button>
-
-              <button onClick={() => filterResbyBrand("CONVERSE")}>
-                CONVERSE
-              </button>
-              <br />
-
-              <button onClick={() => filterResbyBrand("KEEN")}>KEEN</button>
-              <br />
-            </div>
-            <div className="line2"></div>
-            <button className="collapsible">
-              <b>Category</b>
-            </button>
-            <div className="content">
-              <button onClick={() => filterResbyCategoryId("men")}>Men</button>
-              <button onClick={() => filterResbyCategoryId("women")}>
-                Women
-              </button>
-              <button onClick={() => filterResbyCategoryId("kids")}>
-                Kids
-              </button>
-            </div>
-            <div className="line2"></div>
-            <button className="collapsible">
-              <b>Rating</b>
-            </button>
-            <div className="content">
-              <button onClick={() => filterResbyRating(5)}>5 star</button>
-              <button onClick={() => filterResbyRating(4)}>4 star</button>
-              <button onClick={() => filterResbyRating(3)}>3 Star</button>
-              <button onClick={() => filterResbyRating(3.5)}>3.5</button>
-              <button onClick={() => filterResbyRating(4.5)}>4.5</button>
-
-              <br />
-            </div>
-            <div className="line2"></div>
-            <button className="collapsible">
-              <b>Type</b>
-            </button>
-            <div className="content">
-              <button onClick={() => filterResbyProductType("clothing")}>
-                Clothing
-              </button>
-              <button onClick={() => filterResbyProductType("shoes")}>
-                Shoes
-              </button>
-            </div>
-            <div className="line2"></div>
-            <button className="collapsible">
-              <b>By Gender</b>
-            </button>
-            <div className="content">
-              <button onClick={() => filterResbygender("boys")}>Male</button>
-              <button onClick={() => filterResbygender("girls")}>Female</button>
-              <button onClick={() => filterResbygender("male")}>
-                Kid Boys
-              </button>
-              <button onClick={() => filterResbygender("female")}>
-                Kid Girls
-              </button>
-            </div>
-
-            <div className="line2"></div>
           </div>
         </div>
 
@@ -278,4 +280,4 @@ const ProductSidebar = () => {
   );
 };
 
-export default ProductSidebar;
+export default Col;

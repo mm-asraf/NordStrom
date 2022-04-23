@@ -1,10 +1,16 @@
 const cookieSession = require("cookie-session");
 const express = require("express");
 const cors = require("cors");
-const passportSetup = require("./passport");
+const dotenv = require("dotenv");
 const passport = require("passport");
 const authRoute = require("./routes/auth");
 const app = express();
+
+//load config
+dotenv.config({ path: "./config.env" });
+
+//passport config
+require("./passport")(passport);
 
 app.use(
   cookieSession({ name: "session", keys: ["lama"], maxAge: 24 * 60 * 60 * 100 })
