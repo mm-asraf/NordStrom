@@ -66,7 +66,6 @@ const Header = () => {
             <Button varient="outline" onClick={google}>
               Sign In
             </Button>
-            <Button onClick={handleOpen}> Modal</Button>
           </div>
 
           <div className="cart_bag">

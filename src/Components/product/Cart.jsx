@@ -2,8 +2,29 @@ import { Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, delCart } from "../../Redux/cart/Actions";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
 import "./Cart.css";
+import { Link } from "react-router-dom";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 1000,
+  height: 600,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
+
 const Cart = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const dispatch = useDispatch();
   const [amount, setAmount] = useState(null);
 
@@ -56,6 +77,34 @@ const Cart = () => {
         })}
         <div></div>
         <h4 className="net">Net Amount: {amount}</h4>
+        <div className="buy">
+          <Button variant="outlined" onClick={handleOpen}>
+            BUY NOW
+          </Button>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style} className="box">
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <img
+                  className="thank_you"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2pBMnwb3AZ2UC19LzUHq0xELxR62rqMWP5A&usqp=CAU"
+                  alt="thank you for order"
+                />
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div>
+                  <Link to={`/products`}>
+                    <button className="shop_cont">Continue Shopping</button>
+                  </Link>
+                </div>
+              </Typography>
+            </Box>
+          </Modal>
+        </div>
       </div>
     </>
   );

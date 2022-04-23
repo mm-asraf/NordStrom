@@ -38,9 +38,33 @@
 }
 
 .net {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .cart {
   margin-bottom: 20px;
+}
+
+.buy {
+  margin-left: 47%;
+  margin-top: 8px;
+}
+
+.thank_you {
+  margin-left: 50px;
+  width: 800px;
+}
+
+.shop_cont {
+  text-decoration: none;
+  width: 180px;
+  height: 45px;
+  cursor: pointer;
+  border: 1px solid rgba(25, 118, 210, 0.5);
+  color: #1976d2;
+  background-color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 40%;
+  border-radius: 10px;
 }
