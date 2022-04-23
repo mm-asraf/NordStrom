@@ -111,8 +111,10 @@ const Col = () => {
           <div className="dropdowns">
             <div className="collapsible">
               <div className="header" {...getToggleProps()}>
-                All Filter Functions
-                {/* {isExpanded ? "Collapse" : "Expand"} */}
+                {/* All Filter Functions */}
+                {isExpanded
+                  ? "Click Any Buttons to get your filter Collapse"
+                  : "All Filters (Click here to Toggle Filters)"}
               </div>
               <div {...getCollapseProps()}>
                 <div className="content">
@@ -132,10 +134,8 @@ const Col = () => {
                   <h4 className="fl-b">Filter by Brands</h4>
                   <button onClick={() => filterResbyBrand("NIKE")}>NIKE</button>
 
-                  <button
-                    onClick={() => filterResbyBrand("Fear of God Essentials")}
-                  >
-                    Fear of God Essentials
+                  <button onClick={() => filterResbyBrand("Fear of God")}>
+                    Fear of God
                   </button>
 
                   <button onClick={() => filterResbyBrand("7 Diamonds")}>
@@ -175,7 +175,7 @@ const Col = () => {
                   </button>
 
                   <button onClick={() => filterResbyBrand("TREASURE & BOND")}>
-                    TREASURE & BOND
+                    TREASURE
                   </button>
 
                   <button onClick={() => filterResbyBrand("ZELLA GIRL")}>
@@ -183,7 +183,7 @@ const Col = () => {
                   </button>
 
                   <button onClick={() => filterResbyBrand("THE NORTH FACE")}>
-                    THE NORTH FACE
+                    THE NORTH
                   </button>
 
                   <button onClick={() => filterResbyBrand("NATIVE SHOES")}>
@@ -267,9 +267,16 @@ const Col = () => {
                   <p>{d.price}</p>
                   <p>{d.brand}</p>
                   <p>Rating {d.rating} Star</p>
-                  <Button className="prod_btn" variant="outlined">
-                    <Link to={`/products/${d.id}`}>showdetails</Link>
-                  </Button>
+                  <Link to={`/products/${d.id}`}>
+                    {" "}
+                    <button
+                      style={{ textDecoration: "none" }}
+                      className="prod_btn"
+                      variant="outlined"
+                    >
+                      showdetails
+                    </button>
+                  </Link>
                 </div>
               );
             })}

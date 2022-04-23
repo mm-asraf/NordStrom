@@ -14,7 +14,10 @@ const ProductDetails = () => {
   useEffect(() => {
     //
     const getProducts = async () => {
-      const res = await fetch(`http://localhost:8000/products/${id}`);
+      // const res = await fetch(`http://localhost:8000/products/${id}`);
+      const res = await fetch(
+        `https://product-server-app.herokuapp.com/products/${id}`
+      );
       const resData = await res.json();
       setProducts(resData);
     };

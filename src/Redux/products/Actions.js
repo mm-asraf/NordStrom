@@ -28,7 +28,7 @@ export const fetchProductsFailure = () => {
 export const fetchProducts = () => (dispatch) => {
   dispatch(fetchProductsRequest());
   axios
-    .get("http://localhost:8000/products")
+    .get("https://product-server-app.herokuapp.com/products")
     .then((res) => res.data)
     .then((res) => dispatch(fetchProductsSuccess(res)))
     .catch((err) => dispatch(fetchProductsRequest(err)));
@@ -37,7 +37,7 @@ export const fetchProducts = () => (dispatch) => {
 export const fetchCat = () => (dispatch) => {
   dispatch(fetchProductsRequest());
   axios
-    .get("http://localhost:8000/categories")
+    .get("https://product-server-app.herokuapp.com/categories")
     .then((res) => res.data)
     .then((res) => dispatch(fetchProductsSuccess(res)))
     .catch((err) => dispatch(fetchProductsRequest(err)));
