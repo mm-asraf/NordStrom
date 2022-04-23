@@ -48,7 +48,9 @@ const Header = () => {
           </div>
 
           <div className="cart_bag">
-            <Link to="cart">cart({cartD.length})</Link>
+            <Link to="cart" className="sale">
+              cart({cartD.length})
+            </Link>
             {/* <CardTravelIcon /> */}
           </div>
         </div>

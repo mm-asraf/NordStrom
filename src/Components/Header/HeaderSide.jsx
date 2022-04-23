@@ -48,7 +48,9 @@ const HeaderSide = () => {
           </div>
 
           <div className="cart_bag">
-            <Link to="cart">cart({cartD.length})</Link>
+            <Link className="sale" to="cart">
+              cart({cartD.length})
+            </Link>
             {/* <CardTravelIcon /> */}
           </div>
         </div>
