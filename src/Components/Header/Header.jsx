@@ -65,10 +65,28 @@ const Header = () => {
           </Link>
         </li>
         {/* <li>Sale</li> */}
-        <li>Women</li>
-        <li>Men</li>
-        <li>Kids</li>
-        <li>Brands</li>
+        <li>
+          <Link className="sale" to="/products">
+            Women
+          </Link>
+        </li>
+
+        <li>
+          <Link className="sale" to="/products">
+            Men
+          </Link>
+        </li>
+        <li>
+          <Link className="sale" to="/products">
+            Kids
+          </Link>
+        </li>
+
+        <li>
+          <Link className="sale" to="/products">
+            Brands
+          </Link>
+        </li>
         <li>Young Adult</li>
         <li>Activewear</li>
         <li>Home</li>
