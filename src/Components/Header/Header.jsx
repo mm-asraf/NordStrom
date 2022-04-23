@@ -67,23 +67,6 @@ const Header = () => {
               Sign In
             </Button>
             <Button onClick={handleOpen}> Modal</Button>
-            <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-            >
-              <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Text in a modal
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  <input type="text" placeholder="Enter username" />
-                  <br />
-                  <input type="text" placeholder="Enter password" />
-                </Typography>
-              </Box>
-            </Modal>
           </div>
 
           <div className="cart_bag">
