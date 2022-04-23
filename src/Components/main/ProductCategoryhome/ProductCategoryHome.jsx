@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./ProductCategoryHome.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCat } from "../../../Redux/products/Actions";
+import { Link } from "react-router-dom";
 
 const ProductCategoryHome = () => {
   const dispatch = useDispatch();
@@ -18,10 +19,12 @@ const ProductCategoryHome = () => {
       <div className="container">
         {data.map((catData) => {
           return (
-            <div className="product_cards">
-              <img src={catData.img} alt="category" />
-              <p>{catData.title}</p>
-            </div>
+            <Link to="/products" className="title_cat">
+              <div className="product_cards">
+                <img src={catData.img} alt="category" />
+                <p>{catData.title}</p>
+              </div>
+            </Link>
           );
         })}
       </div>

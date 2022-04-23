@@ -40,3 +40,8 @@
   text-align: center;
   margin: 15px;
 }
+
+.title_cat {
+  text-decoration: none;
+  color: #000000;
+}

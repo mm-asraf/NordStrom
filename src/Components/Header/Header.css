@@ -120,3 +120,12 @@
 .cart_bag {
   margin-top: 5px;
 }
+
+.sale {
+  text-decoration: none;
+  list-style: none;
+  color: #000000;
+}
+.nord {
+  margin-left: 30px;
+}

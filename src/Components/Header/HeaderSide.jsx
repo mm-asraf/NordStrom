@@ -22,6 +22,7 @@ const HeaderSide = () => {
         </div>
         <div className="top_left">
           <img src="https://n.nordstrommedia.com/alias/IN.gif" alt="india" />
+
           <p>India</p>
         </div>
       </div>
@@ -30,12 +31,15 @@ const HeaderSide = () => {
 
       <div className="mid_header">
         <div className="mid_left">
-          <img
-            src="https://n.nordstrommedia.com/alias/nordstrom-logo.svg"
-            alt="nordstrom"
-            width="198px"
-            height="28px"
-          />
+          <Link to="/">
+            <img
+              src="https://n.nordstrommedia.com/alias/nordstrom-logo.svg"
+              alt="nordstrom"
+              width="198px"
+              height="28px"
+              className="nord"
+            />
+          </Link>
         </div>
 
         <div className="mid_right">
@@ -54,7 +58,9 @@ const HeaderSide = () => {
 
       <div className="nav_header">
         <li>
-          <Link to="/products">Sale</Link>
+          <Link className="sale" to="/products">
+            Sale
+          </Link>
         </li>
         {/* <li>Sale</li> */}
         <li>Women</li>

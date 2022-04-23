@@ -97,7 +97,7 @@ const Cart = () => {
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 <div>
-                  <Link to={`/products`}>
+                  <Link to={`/`}>
                     <button className="shop_cont">Continue Shopping</button>
                   </Link>
                 </div>
