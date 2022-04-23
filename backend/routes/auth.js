@@ -14,28 +14,11 @@ router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
  * @route GET /auth/google/callback
  */
 
-router.get("/login/success", (req, res) => {
-  if (req.user) {
-    res.status(200).json({
-      success: true,
-      message: "success",
-      user: req.user,
-    });
-  }
-});
-
-router.get("/login/failed", (req, res) => {
-  res.status(401).json({
-    success: false,
-    message: "failure",
-  });
-});
-
 router.get(
   "/google/callback",
   passport.authenticate("google", {
     successRedirect: "http://localhost:3000/products",
-    failureRedirect: "/login/failed",
+    failureRedirect: "http://localhost:3000",
   })
 );
 

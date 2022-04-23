@@ -1,35 +1,14 @@
 import React from "react";
 import "./Header.css";
-import CardTravelIcon from "@mui/icons-material/CardTravel";
-import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
-import ProductCategoryHome from "../main/ProductCategoryhome/ProductCategoryHome";
-import { Box, Modal, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
-import { useSelector, useDispatch } from "react-redux";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  height: 300,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { useSelector } from "react-redux";
 
 const Header = () => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   const cartD = useSelector((state) => state.cart);
 
   const google = () => {
-    window.open("http://localhost:5000/auth/google", "_self");
+    window.open("http://localhost:5000/auth/google/callback", "_self");
   };
 
   return (

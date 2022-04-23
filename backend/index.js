@@ -3,14 +3,19 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const passport = require("passport");
-const authRoute = require("./routes/auth");
+const connectDB = require("./config/db");
 const app = express();
 
 //load config
 dotenv.config({ path: "./config.env" });
+connectDB();
 
 //passport config
-require("./passport")(passport);
+require("./config/passport")(passport);
+
+//Body-parser
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.use(
   cookieSession({ name: "session", keys: ["lama"], maxAge: 24 * 60 * 60 * 100 })
@@ -18,6 +23,11 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(function (req, res, next) {
+  res.locals.user = req.user || null;
+  next();
+});
 
 app.use(
   cors({
@@ -27,8 +37,8 @@ app.use(
   })
 );
 
-app.use("/auth", authRoute);
+app.use("/auth", require("./routes/auth"));
 
-app.listen("5000", () => {
+app.listen(5000, () => {
   console.log("Server is running!");
 });

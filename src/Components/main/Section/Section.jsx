@@ -1,9 +1,9 @@
 import React from "react";
-
+import "./Section.css";
 const Section = () => {
   return (
     <div>
-      <div>
+      <div className="section_img">
         <img
           src="https://n.nordstrommedia.com/id/84f6353c-4df4-4e1b-bad8-f9bd775a3893.png?h=97&w=1608"
           alt="imag"
@@ -17,9 +17,11 @@ const Section = () => {
           all year long—as we spotlight innovative, earth-first brands and share
           our corporate sustainability programs, goals and wins.
         </p>
-        <button>Shop Sustainable Style</button>
-        <button>Get Involved</button>
-        <button>Learn More</button>
+        <div className="btn">
+          <button>Shop Sustainable Style</button>
+          <button>Get Involved</button>
+          <button>Learn More</button>
+        </div>
       </div>
 
       <div></div>

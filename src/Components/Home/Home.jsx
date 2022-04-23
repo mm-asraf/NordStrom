@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Footer from "../footer/Footer";
 import Header from "../Header/Header";
 import ProductCategoryHome from "../main/ProductCategoryhome/ProductCategoryHome";
+import ProductSlide from "../main/ProductSlidehome/ProductSlide";
 import Section from "../main/Section/Section";
 
 const Home = () => {
@@ -9,7 +10,8 @@ const Home = () => {
     <div>
       <Header />
       <ProductCategoryHome />
-      {/* <Section /> */}
+      <Section />
+      <ProductSlide />
       <Footer />
     </div>
   );

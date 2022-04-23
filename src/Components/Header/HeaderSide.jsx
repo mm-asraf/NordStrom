@@ -2,16 +2,15 @@ import React from "react";
 import "./Header.css";
 
 import { Link } from "react-router-dom";
-
 import Button from "@mui/material/Button";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const HeaderSide = () => {
   const cartD = useSelector((state) => state.cart);
 
-  const google = () => {
-    window.open("http://localhost:5000/auth/google", "_self");
-  };
+  // const google = () => {
+  //   window.open("http://localhost:5000/auth/google", "_self");
+  // };
 
   return (
     <div>
@@ -41,9 +40,7 @@ const HeaderSide = () => {
 
         <div className="mid_right">
           <div className="signin">
-            <Button varient="outline" onClick={google}>
-              Sign In
-            </Button>
+            <Button varient="outline">Sign In</Button>
           </div>
 
           <div className="cart_bag">
