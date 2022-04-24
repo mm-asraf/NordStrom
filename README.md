@@ -29,7 +29,7 @@
 - Search functions || Product can be search by brand , title and category.
 - Add To Cart || Product can be add to cart and can track each product price and net amount dynamically.
 - Auto Delete product from cart || if you click decrease button then the  product by one your product automatically remove from the cart.
-- Auto Mathematical Calculation || If you any no. of product. in the cart page you can track the quantity and price.
+- Auto Mathematical Calculation || If you add any no. of product in the cart page you can track the quantity and price.
 - Routing
 - Login || Used Google Oauth 
 
