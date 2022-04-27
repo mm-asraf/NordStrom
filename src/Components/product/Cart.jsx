@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import "./Cart.css";
 import { Link } from "react-router-dom";
+import { delProduct } from "../../Redux/cart/Actions";
 
 const style = {
   position: "absolute",
@@ -22,13 +23,19 @@ const style = {
 };
 
 const Cart = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
   const dispatch = useDispatch();
+  const data = useSelector((state) => state.cart);
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
   const [amount, setAmount] = useState(null);
 
-  const data = useSelector((state) => state.cart);
+  const handleOpen = () => {
+    if (data.length === 0) {
+      setOpen(false);
+    } else {
+      setOpen(true);
+    }
+  };
 
   const delProd = (product) => {
     dispatch(delCart(product));
@@ -44,6 +51,10 @@ const Cart = () => {
     }, 0);
     setAmount(tAmount);
   }, [data]);
+
+  const deleteProduct = (d) => {
+    dispatch(delProduct(d));
+  };
 
   return (
     <>
@@ -70,6 +81,10 @@ const Cart = () => {
                 </Button>
                 <Button variant="contained" onClick={() => increasebyOne(d)}>
                   +
+                </Button>
+
+                <Button variant="contained" onClick={() => deleteProduct(d)}>
+                  Delete
                 </Button>
               </div>
             </div>

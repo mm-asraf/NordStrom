@@ -1,4 +1,4 @@
-import { ADD_TO_CART, DELETE_ITEM } from "./ActionType";
+import { ADD_TO_CART, DELETE_ITEM, DELETE_PRODUCT } from "./ActionType";
 
 const productCart = [];
 
@@ -54,6 +54,14 @@ export const cartReducer = (state = productCart, action) => {
         );
       }
 
+    case DELETE_PRODUCT:
+      const present2 = state.find((c) => c.id === product.id);
+
+      if (present2) {
+        return state.filter((c) => c.id !== present2.id);
+      }
+
+      break;
     default:
       return state;
   }

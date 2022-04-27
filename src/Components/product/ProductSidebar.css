@@ -68,7 +68,6 @@
 
 .main_prod_container > .filter_container {
   grid-column: 1 / span 1;
-  background-color: pink;
 }
 
 .container1 {
