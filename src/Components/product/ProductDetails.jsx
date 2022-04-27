@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { addToCart } from "../../Redux/cart/Actions";
 import Header from "../Header/Header";
 import "./ProductDetails.css";
+import Footer from "../footer/Footer";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -51,6 +52,7 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

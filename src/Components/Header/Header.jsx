@@ -7,10 +7,6 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const cartD = useSelector((state) => state.cart);
 
-  const google = () => {
-    window.open("http://localhost:5000/auth/google/callback", "_self");
-  };
-
   return (
     <div>
       {/* top header */}
@@ -42,9 +38,9 @@ const Header = () => {
 
         <div className="mid_right">
           <div className="signin">
-            <Button varient="outline" onClick={google}>
-              Sign In
-            </Button>
+            <Link className="loginHead" to="/login">
+              <Button variant="outlined">Login</Button>
+            </Link>
           </div>
 
           <div className="cart_bag">

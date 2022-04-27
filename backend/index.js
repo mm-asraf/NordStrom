@@ -1,43 +1,63 @@
-const cookieSession = require("cookie-session");
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const passport = require("passport");
 const connectDB = require("./config/db");
+const User = require("./models/user.model");
 const app = express();
 
 //load config
 dotenv.config({ path: "./config.env" });
 connectDB();
 
-//passport config
-require("./config/passport")(passport);
-
 //Body-parser
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(
-  cookieSession({ name: "session", keys: ["lama"], maxAge: 24 * 60 * 60 * 100 })
-);
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.use(function (req, res, next) {
-  res.locals.user = req.user || null;
-  next();
-});
-
-app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:5000",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
 );
 
-app.use("/auth", require("./routes/auth"));
+app.post("/signup", (req, res) => {
+  const { email, password } = req.body;
+
+  User.findOne({ email: email }, (err, user) => {
+    if (user) {
+      res.send({ message: "User already Exists" });
+    } else {
+      const user = new User({
+        email,
+        password,
+      });
+
+      user.save((err) => {
+        if (err) {
+          res.send("something went wrong");
+        } else {
+          res.send({ message: "successFully SignedUp" });
+        }
+      });
+    }
+  });
+});
+
+app.post("/login", (req, res) => {
+  const { email, password } = req.body;
+  User.findOne({ email: email }, (err, user) => {
+    if (user) {
+      if (password === user.password) {
+        res.redirect("http://localhost:3000/products");
+      } else {
+        res.send({ message: "password didnt match" });
+      }
+    } else {
+      res.send("User not registered");
+    }
+  });
+});
 
 app.listen(5000, () => {
   console.log("Server is running!");

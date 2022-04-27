@@ -68,3 +68,12 @@
   margin-left: 40%;
   border-radius: 10px;
 }
+
+.div_details > h4 {
+  margin: 5px;
+}
+
+.div_details > button {
+  margin-left: 10px;
+  margin-top: 10px;
+}

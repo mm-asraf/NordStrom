@@ -1,0 +1,55 @@
+.login {
+  width: 25%;
+  height: 320px;
+  /* background-color: aqua; */
+  margin: 0 auto;
+  margin-top: 10%;
+  box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login > h2 {
+  text-align: center;
+  margin-top: 7px;
+}
+
+.cont {
+  width: 92%;
+  height: 270px;
+  margin: 0px 14px;
+  margin-top: 10px;
+  /* background-color: red; */
+}
+
+.cont > input {
+  width: inherit;
+  height: 35px;
+  margin-top: 18px;
+  margin-left: 12px;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+  border: 0.5px solid #bbbbbb;
+}
+
+.cont > button {
+  margin-top: 18px;
+  width: 92%;
+  margin-left: 12px;
+}
+
+.cont > .link {
+  text-decoration: none;
+}
+
+.cont > .link > button {
+  margin-top: 10px;
+  width: 92%;
+  margin-left: 12px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.cont > h4 {
+  text-align: center;
+  margin-top: 12px;
+}
