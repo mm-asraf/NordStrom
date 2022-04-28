@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 const userData = {
   email: "",
@@ -11,6 +12,7 @@ const userData = {
 
 const Login = () => {
   const [user, setUser] = useState(userData);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,10 +20,13 @@ const Login = () => {
     setUser(data);
   };
 
-  const login = () => {
-    axios
-      .post("http://localhost:5000/login", user)
-      .then((res) => alert(res.data.message));
+  const login = ({ setLoginUser }) => {
+    axios.post("http://localhost:5000/login", user).then((res) => {
+      alert(res.data.message);
+      if (res.data.message === "login succesfully") {
+        navigate("/products");
+      }
+    });
   };
 
   return (

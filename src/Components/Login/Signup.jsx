@@ -20,7 +20,7 @@ const Signup = () => {
   const signup = () => {
     const { email, password } = user;
     if (email && password) {
-      alert("posted data");
+      alert("Signed Up Successfully");
       axios
         .post("http://localhost:5000/signup", user)
         .then((res) => console.log(res));

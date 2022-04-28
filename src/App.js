@@ -10,16 +10,14 @@ import Login from "./Components/Login/Login";
 import Signup from "./Components/Login/Signup";
 
 function App() {
-  const [user, setLoginUser] = useState({});
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route exact path="/" element={<Home />}></Route>
         <Route path="/products/:id/cart" element={<Cart />}></Route>
         <Route path="/Products" element={<ProductSidebar />}></Route>
-        <Route path="/login" element={<Login />}>
-          {/* {user && user._id ? <ProductSidebar /> : <Login />} */}
-        </Route>
+
+        <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/products/:id" element={<ProductDetails />}></Route>
       </Routes>

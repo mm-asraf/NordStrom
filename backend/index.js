@@ -49,7 +49,7 @@ app.post("/login", (req, res) => {
   User.findOne({ email: email }, (err, user) => {
     if (user) {
       if (password === user.password) {
-        res.redirect("http://localhost:3000/products");
+        res.send({ message: "login succesfully" });
       } else {
         res.send({ message: "password didnt match" });
       }
