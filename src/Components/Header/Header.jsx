@@ -39,7 +39,7 @@ const Header = () => {
         <div className="mid_right">
           <div className="signin">
             <Link className="loginHead" to="/login">
-              <Button variant="outlined">Login</Button>
+              <Button variant="outlined">Login/Signup</Button>
             </Link>
           </div>
 
